@@ -1,0 +1,503 @@
+/*
+-------------------------------------------------------------
+Antonio Juan Sanchez Martín
+anto@usal.es
+Descripción del fichero:
+
+    - Hoja de estilos de la aplicación
+-------------------------------------------------------------
+*/ 
+
+body
+{
+  margin: 0;
+  padding: 0;
+}
+
+#cargador
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 5000;
+  background: #FFF;
+}
+
+#cargador .cargador
+{
+  margin-top: 200px;
+}
+
+/*
+  ------------------------------------------------------------------------------
+  Elementos de la GUI
+  ------------------------------------------------------------------------------
+*/
+
+
+.dialogo  
+{
+    z-index: 4000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+
+.dialogo .fondo_dialogo
+{
+    z-index: 20;
+    position: absolute;
+    background: url(imagenes/semi_negro.png);
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.dialogo .contenido
+{
+    background: #fff;
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.46);
+    -moz-box-shadow:    3px 3px 5px 0px rgba(0, 0, 0, 0.46);
+    box-shadow:         3px 3px 5px 0px rgba(0, 0, 0, 0.46);
+}
+
+#controles .btn
+{
+  min-width: 130px;
+  margin: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}
+
+#controles img 
+{
+  max-width: 160px;
+  margin: 0;
+  height: auto;
+  width: auto;
+}
+
+.menu
+{
+    overflow: hidden;
+    background: url(imagenes/semi_blanco.png);  
+    position: absolute;  
+    min-width: 150px;
+    min-height: 10px;
+    padding-bottom: 0px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.menu .cerrar_menu
+{
+    width: 100%;
+    height: 10px;
+    background: #DDD url(imagenes/arrow.png) left top no-repeat; 
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    position: absolute;
+    top: 0;
+}
+
+.menu_inferior
+{
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.menu_inferior .cerrar_menu 
+{
+  background: #DDD url(imagenes/arrow.png) left bottom no-repeat;
+  position: absolute;
+top: 0; 
+}
+
+.menu_inferior .cerrar_menu.cerrado
+{
+  background: #DDD url(imagenes/arrow.png) left top no-repeat; 
+}
+
+
+#controles
+{
+  z-index: 20; 
+  top: 10px;
+  left: 10px;
+  padding-top: 0px;
+}
+
+
+/*
+  ------------------------------------------------------------------------------
+  Elementos del grafo central
+  ------------------------------------------------------------------------------
+*/
+
+
+#leyendas
+{
+  z-index: 1000; 
+  top: 10px;
+  right: 20px;
+  width: 300px;
+  height: auto;
+  bottom: 120px;
+}
+
+
+#leyendas #contenido_leyenda
+{
+  font-size: 0.8em;
+  position: absolute;
+  top: 20px;
+  bottom: 5px;
+  line-height: 15px;
+    overflow-y:auto;
+    width: 100%;
+}
+
+#leyendas #contenido_leyenda .categoria_color
+{
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.categoria_item:hover
+{
+  background: #999;
+  color: #fff;
+  cursor: pointer;
+}
+
+#diagrama_curso_info 
+{
+    z-index: 40;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -200px;
+    top: 50%;
+    height: 400px;
+    width: 400px;
+    -webkit-border-radius:50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background: #ffffff;
+    position: absolute;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+
+
+
+
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.node:hover, .marcado
+{
+  stroke: #FF0;
+  stroke-width: 10px;
+
+}
+
+.seleccionado
+{
+  stroke: #F00 !important;
+  stroke-width: 10px;  
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.tooltip 
+{   
+  position: absolute;           
+  text-align: center;           
+  pointer-events: none;
+  height: 30px;         
+}
+
+.tooltip .title 
+{
+  padding: 8px;             
+  font: 12px sans-serif;        
+  background: white;   
+  border: 2px solid #999;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  margin: 2px;
+}
+
+text {
+  font: 10px sans-serif;
+  stroke-width: 0px;
+  color: #000;
+}
+
+
+#diagrama_grafo
+{
+  position: absolute;
+  left: 0px;
+  top: 0;
+  right: 0;
+  bottom: 0px;
+
+  overflow:scroll;
+  z-index: 10;
+  background: #fdffff;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZGZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYzhlZWZiIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-radial-gradient(center, ellipse cover,  #fdffff 0%, #c8eefb 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#fdffff), color-stop(100%,#c8eefb));
+  background: -webkit-radial-gradient(center, ellipse cover,  #fdffff 0%,#c8eefb 100%);
+  background: -o-radial-gradient(center, ellipse cover,  #fdffff 0%,#c8eefb 100%);
+  background: -ms-radial-gradient(center, ellipse cover,  #fdffff 0%,#c8eefb 100%);
+  background: radial-gradient(ellipse at center,  #fdffff 0%,#c8eefb 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdffff', endColorstr='#c8eefb',GradientType=1 );
+
+
+}
+
+
+/*
+  ------------------------------------------------------------------------------
+  Elementos del timeline
+  ------------------------------------------------------------------------------
+*/
+
+
+
+#diagrama_timeline
+{
+  position: absolute;
+  left: 0px;
+  right: 0;
+  bottom: 0px;
+  height: 100px;
+  background: url(imagenes/semi_blanco.png);  
+  z-index: 20;
+  overflow: hidden;
+}
+
+#diagrama_timeline
+{
+  margin-top: -20px;
+}
+
+
+.nodo_timeline
+{
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+.nodo_timeline:hover
+{
+  stroke: #ff0;
+  stroke-width: 5px;
+  z: 1000;
+}
+
+.axis path, .axis line 
+{
+      fill: none;
+      stroke: black;
+      shape-rendering: crispEdges;
+}
+
+.axis text 
+{
+      font-family: sans-serif;
+      font-size: 10px;
+}
+
+.timeline-label 
+{
+      font-family: sans-serif;
+      font-size: 12px;
+}
+
+.coloredDiv 
+{
+      height:20px; width:20px; float:left;
+}
+
+.nparpadeo
+{
+  stroke-width: 8px;
+  stroke: yellow !important;
+}
+
+
+/*
+  ------------------------------------------------------------------------------
+  Estilos para el comparador
+  ------------------------------------------------------------------------------
+*/
+
+
+#diagrama_comparador_info
+{
+    z-index: 40;
+    left: 50%;
+    margin-left: -400px;
+    margin-top: -210px;
+    top: 50%;
+    height: 420px;
+    width: 800px;
+    -webkit-border-radius:5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #ffffff;
+    position: absolute;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+
+.background path {
+  fill: none;
+  stroke: none;
+  stroke-width: 20px;
+  pointer-events: stroke;
+}
+
+.foreground path {
+  fill: none;
+  
+  stroke-width: 3px;
+}
+
+.axis .title {
+  font-size: 11px;
+  font-weight: bold;
+  
+}
+
+.axis line,
+.axis path {
+  fill: none;
+  stroke: #999;
+  shape-rendering: crispEdges;
+}
+
+.label {
+  -webkit-transition: fill 125ms linear;
+}
+
+.active .label:not(.inactive) {
+  font-weight: bold;
+}
+
+.label.inactive {
+  fill: #ccc;
+}
+
+.foreground path.inactive {
+  stroke: #ccc;
+  stroke-opacity: .5;
+  stroke-width: 1px;
+}
+
+.tick text
+{
+  font-weight: normal;
+  fill: #666;
+
+}
+
+/*
+  ------------------------------------------------------------------------------
+  Estilos para las estádiscias del curso
+  ------------------------------------------------------------------------------
+*/
+
+.capa_num_alumnos
+{
+  background: url(imagenes/alumnos_fondo.jpg);
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  margin-left: -45px;
+  margin-top: -45px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.capa_num_alumnos .alumnos
+{
+
+  margin-top: 55px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.arc text{
+  fill: #FFFFFF;
+  font-size: 12px;
+}
+
+#diagrama_curso_info_leyenda {
+  z-index: 50;
+  left: 50%;
+  margin-left: -175px;
+  margin-top: 210px;
+  top: 50%;
+  width: 350px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: #ffffff;
+  position: absolute;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+  color: #666;
+  text-align: center;
+  padding: 10px;
+  overflow: hidden;
+  font-size: 13px;
+}
+
+
+
